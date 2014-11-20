@@ -4,7 +4,7 @@
 //
 //-----------------------------------------------------------------------------
 
-package com.bvalosek.cpuspy;
+package org.axdev.cpuspy;
 
 // imports
 import java.io.BufferedReader;
@@ -19,8 +19,8 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.bvalosek.cpuspy.CpuStateMonitor.CpuState;
-import com.bvalosek.cpuspy.CpuStateMonitor.CpuStateMonitorException;
+import org.axdev.cpuspy.CpuStateMonitor.CpuState;
+import org.axdev.cpuspy.CpuStateMonitor.CpuStateMonitorException;
 
 /** main application class */
 public class CpuSpyApp extends Application {

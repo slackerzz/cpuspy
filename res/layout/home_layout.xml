@@ -27,15 +27,16 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/ui_states_view"
                 android:paddingBottom="10dp"
+                android:textColor="@color/text_primary_color"
                 />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:textColor="#ffffff"
+                android:textColor="@color/text_primary_color"
                 android:textSize="20dp"
-                android:background="#551111"
+                android:background="#fff5f5f5"
                 android:text="No states file found. Are you sure your phone is compatible?\n\nIf you are running a custom ROM or kernel, try contacting its developer to inform him that the states file is not readable."
                 android:visibility="gone"
                 android:id="@+id/ui_states_warning"
@@ -54,6 +55,7 @@
                 android:layout_height="wrap_content"
                 android:visibility="gone"
                 android:id="@+id/ui_additional_states"
+                android:textColor="@color/text_primary_color"
                 android:padding="6dp"
                 />
 
@@ -67,7 +69,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25dp"
-                android:textColor="#dddddd"
+                android:textColor="@color/text_primary_color"
                 android:padding="7dp"
                 android:id="@+id/ui_total_state_time"
                 android:gravity="center_horizontal"
@@ -84,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:text="Kernel"
                 android:textSize="19dp"
-                android:textColor="#dddddd"
+                android:textColor="@color/text_primary_color"
                 android:padding="10dp"
                 android:id="@+id/ui_kernel_string"
                 />

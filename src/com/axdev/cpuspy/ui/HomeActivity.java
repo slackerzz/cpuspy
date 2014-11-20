@@ -4,7 +4,7 @@
 //
 //-----------------------------------------------------------------------------
 
-package com.bvalosek.cpuspy.ui;
+package org.axdev.cpuspy.ui;
 
 // imports
 import java.util.ArrayList;
@@ -24,9 +24,9 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.bvalosek.cpuspy.*;
-import com.bvalosek.cpuspy.CpuStateMonitor.CpuState;
-import com.bvalosek.cpuspy.CpuStateMonitor.CpuStateMonitorException;
+import org.axdev.cpuspy.*;
+import org.axdev.cpuspy.CpuStateMonitor.CpuState;
+import org.axdev.cpuspy.CpuStateMonitor.CpuStateMonitorException;
 import android.util.Log;
 
 /** main activity class */
@@ -59,8 +59,7 @@ public class HomeActivity extends Activity
         findViews();
 
         // set title to version string
-        setTitle(getResources().getText(R.string.app_name) + " v" +
-        getResources().getText(R.string.version_name));
+        setTitle(getResources().getText(R.string.app_name));
 
         // see if we're updating data during a config change (rotate screen)
         if (savedInstanceState != null) {
