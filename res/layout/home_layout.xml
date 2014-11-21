@@ -34,14 +34,14 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:padding="15dp"
-                android:textColor="@color/text_primary_color"
+                android:textColor="@color/text_secondary_color"
                 android:textSize="20dp"
-                android:background="#fff5f5f5"
+                android:fontFamily="sans-serif-medium"
+                android:background="#ffdb4437"
                 android:text="No states file found. Are you sure your phone is compatible?\n\nIf you are running a custom ROM or kernel, try contacting its developer to inform him that the states file is not readable."
                 android:visibility="gone"
                 android:id="@+id/ui_states_warning"
                 />
-
 
             <TextView
                 android:id="@+id/ui_header_additional_states"
@@ -79,7 +79,6 @@
                 style="@style/infoHeader"
                 android:text="Kernel Info"
                 />
-
 
             <TextView
                 android:layout_width="fill_parent"
