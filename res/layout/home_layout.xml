@@ -65,7 +65,7 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
+                android:textSize="23dp"
                 android:textColor="@color/text_primary_color"
                 android:padding="7dp"
                 android:id="@+id/ui_total_state_time"
@@ -81,7 +81,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="Kernel"
-                android:textSize="19dp"
+                android:textSize="17dp"
                 android:textColor="@color/text_primary_color"
                 android:padding="6dp"
                 android:id="@+id/ui_kernel_string"
