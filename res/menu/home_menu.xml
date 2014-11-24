@@ -3,7 +3,7 @@
 
    <item android:id="@+id/menu_refresh"
          android:title="Refresh"
-         android:icon="@drawable/ic_menu_refresh"
+         android:icon="@*android:drawable/ic_menu_refresh"
    />
    
    <item android:id="@+id/menu_reset"
