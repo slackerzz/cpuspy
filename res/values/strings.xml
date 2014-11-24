@@ -2,4 +2,10 @@
 <resources>
     <string name="app_name">CPU Spy</string>
     <string name="version_name">1.1</string>
+
+    <string name="unused_cpu_states">Unused CPU States</string>
+    <string name="total_state_time">Total State Time</string>
+    <string name="kernel_info">Kernel Info</string>
+
+    <string name="states_warning">No states file found. Are you sure your phone is compatible?\n\nIf you are running a custom ROM or kernel, try contacting its developer to inform him that the states file is not readable.</string>
 </resources>
