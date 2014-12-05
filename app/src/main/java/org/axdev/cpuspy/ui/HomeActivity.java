@@ -7,13 +7,14 @@
 package org.axdev.cpuspy.ui;
 
 // imports
-import java.util.ArrayList;
-import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,15 +25,21 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.axdev.cpuspy.*;
+import org.axdev.cpuspy.CpuSpyApp;
+import org.axdev.cpuspy.CpuStateMonitor;
 import org.axdev.cpuspy.CpuStateMonitor.CpuState;
 import org.axdev.cpuspy.CpuStateMonitor.CpuStateMonitorException;
-import android.util.Log;
+import org.axdev.cpuspy.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /** main activity class */
-public class HomeActivity extends Activity
+public class HomeActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener
 {
     private static final String TAG = "CpuSpy";
+
+    private SwipeRefreshLayout refreshLayout;
 
     private CpuSpyApp _app = null;
 
@@ -65,6 +72,22 @@ public class HomeActivity extends Activity
         if (savedInstanceState != null) {
             _updatingData = savedInstanceState.getBoolean("updatingData");
         }
+        refreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+        refreshLayout.setOnRefreshListener(this);
+        refreshLayout.setColorSchemeResources(R.color.primary);
+    }
+
+    @Override
+    public void onRefresh() {
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                refreshLayout.setEnabled(false);
+                refreshData();
+                refreshLayout.setRefreshing(false);
+                refreshLayout.setEnabled(true);
+            }
+        });
     }
 
     /** When the activity is about to change orientation */
@@ -286,6 +309,7 @@ public class HomeActivity extends Activity
             _updatingData = false;
             updateView();
         }
+
     }
 
     /** logging */
