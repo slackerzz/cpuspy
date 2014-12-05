@@ -179,6 +179,7 @@ public class HomeActivity extends Activity implements SwipeRefreshLayout.OnRefre
         // show the red warning label if no states found
         if ( monitor.getStates().size() == 0) {
             _uiStatesWarning.setVisibility(View.VISIBLE);
+            refreshLayout.setEnabled(false);
             _uiHeaderTotalStateTime.setVisibility(View.GONE);
             _uiTotalStateTime.setVisibility(View.GONE);
             _uiStatesView.setVisibility(View.GONE);
