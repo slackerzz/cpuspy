@@ -1,9 +1,21 @@
-# ignore binaries
-bin/*
-gen/*
+#built application files
+*.apk
+*.ap_
 
-# maven output
-target/*
+# files for the dex VM
+*.dex
 
-# local stuff
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+
+# Local configuration file (sdk path, etc)
 local.properties
+
+# Android Studio
+.idea
+.gradle
+build/
