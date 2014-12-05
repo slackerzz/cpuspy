@@ -7,12 +7,13 @@
 package org.axdev.cpuspy.ui;
 
 // imports
+import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,27 +24,17 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.axdev.cpuspy.CpuSpyApp;
-import org.axdev.cpuspy.CpuStateMonitor;
+import org.axdev.cpuspy.*;
 import org.axdev.cpuspy.CpuStateMonitor.CpuState;
 import org.axdev.cpuspy.CpuStateMonitor.CpuStateMonitorException;
-import org.axdev.cpuspy.R;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import uk.co.senab.actionbarpulltorefresh.library.ActionBarPullToRefresh;
-import uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout;
-import uk.co.senab.actionbarpulltorefresh.library.listeners.OnRefreshListener;
+import android.util.Log;
 
 /** main activity class */
-public class HomeActivity extends Activity implements OnRefreshListener
+public class HomeActivity extends Activity
 {
     private static final String TAG = "CpuSpy";
 
     private CpuSpyApp _app = null;
-
-    private PullToRefreshLayout mPullToRefreshLayout;
 
     // the views
     private LinearLayout    _uiStatesView = null;
@@ -57,22 +48,6 @@ public class HomeActivity extends Activity implements OnRefreshListener
     /** whether or not we're updating the data in the background */
     private boolean     _updatingData = false;
 
-    @Override
-    public void onRefreshStarted(View view) {
-        new AsyncTask<Void,Void,Void>() {
-            @Override
-            protected Void doInBackground(Void... params) {
-                refreshData();
-                return null;
-            }
-
-            @Override
-            protected void onPostExecute(Void result) {
-                super.onPostExecute(result);
-                mPullToRefreshLayout.setRefreshComplete();
-            }
-        }.execute();
-    }
     /** Initialize the Activity */
     @Override public void onCreate(Bundle savedInstanceState)
     {
@@ -90,12 +65,6 @@ public class HomeActivity extends Activity implements OnRefreshListener
         if (savedInstanceState != null) {
             _updatingData = savedInstanceState.getBoolean("updatingData");
         }
-        mPullToRefreshLayout = (PullToRefreshLayout) findViewById(R.id.ptr_layout);
-
-        ActionBarPullToRefresh.from(this)
-                .allChildrenArePullable()
-                .listener(this)
-                .setup(mPullToRefreshLayout);
     }
 
     /** When the activity is about to change orientation */

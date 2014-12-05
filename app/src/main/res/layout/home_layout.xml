@@ -4,100 +4,92 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-    <uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/ptr_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/ui_states_view"
+                android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:textColor="@color/text_primary_color" />
 
-                <LinearLayout
-                    android:id="@+id/ui_states_view"
-                    android:orientation="vertical"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:textColor="@color/text_primary_color" />
+            <TextView
+                android:id="@+id/ui_states_warning"
+                android:padding="6dp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:text="@string/states_warning"
+                android:textColor="@color/text_secondary_color"
+                android:textSize="20dp"
+                android:fontFamily="sans-serif-medium"
+                android:background="#ffdb4437"
+                android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/ui_states_warning"
-                    android:padding="6dp"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:text="@string/states_warning"
-                    android:textColor="@color/text_secondary_color"
-                    android:textSize="20dp"
-                    android:fontFamily="sans-serif-medium"
-                    android:background="#ffdb4437"
-                    android:visibility="gone" />
+            <TextView
+                android:id="@+id/ui_header_total_state_time"
+                style="@style/infoHeader"
+                android:text="@string/total_state_time" />
 
-                <TextView
-                    android:id="@+id/ui_header_total_state_time"
-                    style="@style/infoHeader"
-                    android:text="@string/total_state_time" />
+            <TextView
+                android:id="@+id/ui_total_state_time"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:textColor="@color/text_primary_color"
+                android:textSize="23dp"
+                android:gravity="center_horizontal" />
 
-                <TextView
-                    android:id="@+id/ui_total_state_time"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="6dp"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="23dp"
-                    android:gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/ui_header_additional_states"
+                style="@style/infoHeader"
+                android:visibility="gone"
+                android:text="@string/unused_cpu_states" />
 
-                <TextView
-                    android:id="@+id/ui_header_additional_states"
-                    style="@style/infoHeader"
-                    android:visibility="gone"
-                    android:text="@string/unused_cpu_states" />
+            <TextView
+                android:id="@+id/ui_additional_states"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:textColor="@color/text_primary_color"
+                android:visibility="gone" />
 
-                <TextView
-                    android:id="@+id/ui_additional_states"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="6dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
-                    android:textColor="@color/text_primary_color"
-                    android:visibility="gone" />
+            <TextView
+                style="@style/infoHeader"
+                android:text="@string/kernel_info" />
 
-                <TextView
-                    style="@style/infoHeader"
-                    android:text="@string/kernel_info" />
+            <TextView
+                android:id="@+id/ui_kernel_string"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:textColor="@color/text_primary_color"
+                android:textSize="17dp" />
 
-                <TextView
-                    android:id="@+id/ui_kernel_string"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:layout_marginBottom="12dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="17dp" />
+        </LinearLayout>
 
-            </LinearLayout>
-
-        </ScrollView>
-
-    </uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout>
+    </ScrollView>
 
 </LinearLayout>
 
